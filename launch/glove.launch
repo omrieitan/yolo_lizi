@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node name="glove_node" pkg="yolo_lizi" type="glove_node.py" output="screen">
+  </node>
+
+</launch>

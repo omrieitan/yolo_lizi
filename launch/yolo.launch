@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+<!--  rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=19200 -->
+<arg name="names" default="$(find yolo_lizi)/include/bin/coco.names" doc="list of objects' names to detect'"/>
+<arg name="cfg_file" default="$(find yolo_lizi)/include/cfg/yolov3-tiny.cfg" doc="config file for yolo algorithm"/>
+<arg name="weights" default="$(find yolo_lizi)/include/bin/yolov3-tiny.weights" doc="weights file for yolo algorithm"/>
+
+<node name="yolo_node" pkg="yolo_lizi" type="yolo_node" respawn="false" output="screen">
+    <param name="names" value="$(arg names)"/>
+    <param name="cfg_file" value="$(arg cfg_file)"/>
+    <param name="weights" value="$(arg weights)"/>
+</node>
+
+</launch>
